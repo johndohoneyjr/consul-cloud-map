@@ -81,3 +81,10 @@ cd /home/centos
 echo "Cluster leader is" `curl --silent http://127.0.0.1:8500/v1/status/leader` >> LeaderStatus.txt
 echo "" >> LeaderStatus.txt
 echo "$(consul operator raft list-peers)" >> LeaderStatus.txt
+
+sudo tee /home/centos/enableCloudMap.sh > /dev/null <<EOF
+#! /bin/bash
+
+consul-aws sync-catalog  -aws-namespace-id <name-space-id> -to-aws -consul-service-prefix consul_
+EOF
+chmod u+x /home/centos/enableCloudMap.sh

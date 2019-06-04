@@ -1,0 +1,21 @@
+{
+    "Node": "google",
+    "Address": "www.google.com",
+    "NodeMeta": {
+      "external-node": "true",
+      "external-probe": "true"
+    },
+    "Service": {
+      "ID": "search1",
+      "Service": "search", 
+      "Port": 80
+    },
+    "Checks": [{
+      "Name": "http-check",
+      "status": "passing",
+      "Definition": {
+        "http": "https://www.google.com",
+        "interval": "30s"
+      }
+    }]
+  }

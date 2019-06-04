@@ -3,7 +3,21 @@
   "Statement": [
     {
       "Effect": "Allow",
-      "Action": "ec2:DescribeInstances",
+      "Action": [ 
+        "ec2:DescribeInstances",
+        "servicediscovery:*",
+        "route53:GetHostedZone",
+        "route53:ListHostedZonesByName",
+        "route53:CreateHostedZone",
+        "route53:DeleteHostedZone",
+        "route53:ChangeResourceRecordSets",
+        "route53:CreateHealthCheck",
+        "route53:GetHealthCheck",
+        "route53:DeleteHealthCheck",
+        "route53:UpdateHealthCheck",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeRegions"
+      ],
       "Resource": "*"
     }
   ]
